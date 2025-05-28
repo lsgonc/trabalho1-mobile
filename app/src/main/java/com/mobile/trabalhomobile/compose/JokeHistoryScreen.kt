@@ -1,3 +1,5 @@
+package com.mobile.trabalhomobile.compose
+
 import android.app.Application
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

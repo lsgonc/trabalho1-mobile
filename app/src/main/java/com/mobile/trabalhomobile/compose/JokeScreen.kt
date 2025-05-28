@@ -1,12 +1,13 @@
-package com.mobile.trabalhomobile
+package com.mobile.trabalhomobile.compose
 
+import android.app.Application
+import android.webkit.WebSettings
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.Create
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -20,19 +21,23 @@ import com.mobile.trabalhomobile.viewmodels.JokeViewModel
 import com.mobile.trabalhomobile.viewmodels.JokeViewModelFactory
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.sp
+import com.mobile.trabalhomobile.viewmodels.AnalisarEmocaoViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun JokeScreen(
     onNavigateToHistory: () -> Unit,
     viewModel: JokeViewModel = viewModel(
-        factory = JokeViewModelFactory(LocalContext.current.applicationContext as android.app.Application)
+        factory = JokeViewModelFactory(LocalContext.current.applicationContext as Application)
     ),
+    emocaoViewModel: AnalisarEmocaoViewModel = viewModel(),
     onBackClick: () -> Unit = {},
     onShareClick: () -> Unit = {},
     onTechniquesClick: () -> Unit = {}
 ) {
     var showAnswer by remember { mutableStateOf(false) }
+    emocaoViewModel.sortearEmocao()
 
     Scaffold(
         topBar = {
@@ -85,6 +90,13 @@ fun JokeScreen(
                         )
                     }
                     is JokeState.Success -> {
+                        Text(
+                            text = emocaoViewModel.emocao,
+                            style = MaterialTheme.typography.titleMedium,
+                            textAlign = TextAlign.Center,
+                            fontSize = 30.sp,
+                            modifier = Modifier.padding(bottom = 16.dp)
+                        )
                         Text(
                             text = "Aqui vai uma piada para alegrar seu dia!",
                             style = MaterialTheme.typography.titleMedium,
