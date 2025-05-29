@@ -91,4 +91,5 @@ Caso queira testar a internacionalização do aplicativo, basta mudar o idioma p
 
 ## Referências
 1- [04-2-One2NineAppWithRoom_kt2 - Prof. André Takeshi Endo](https://github.com/andreendo/mobapps-course/tree/master/04-2-One2NineAppWithRoom_kt2)
+
 2- [Android Developers Jetpack](https://developer.android.com/jetpack?hl=pt-br)
