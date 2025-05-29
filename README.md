@@ -87,6 +87,8 @@ dependencies {
 ```
 Feito isso, faça a sincronização dos arquivos, ele deve buildar tudo certinho. Com isso, selecione o dispositivo em que deseja rodar o app e clique "Run".
 
+Caso queira testar a internacionalização do aplicativo, basta mudar o idioma padrão do celular (alterne entre português e inglês) e já vai funcionar certinho. :)
+
 ## Referências
 1- [04-2-One2NineAppWithRoom_kt2 - Prof. André Takeshi Endo](https://github.com/andreendo/mobapps-course/tree/master/04-2-One2NineAppWithRoom_kt2)
 2- [Android Developers Jetpack](https://developer.android.com/jetpack?hl=pt-br)
