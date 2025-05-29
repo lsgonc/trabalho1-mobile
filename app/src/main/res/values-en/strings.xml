@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">TrabalhoMobile</string>
+
+    <string name="analisando_emocao_titulo">Analyzing Emotion</string>
+    <string name="detectando_expressao">Detecting your facial expression...</string>
+    <string name="permissao_camera">Camera permission is required. Please grant permission.</string>
+    <string name="solicitar_permissao">Request Permission</string>
+    <string name="analisando">Analyzing...</string>
+
+    <string name="dicas_estudo_titulo">Study Tips</string>
+    <string name="metodo1">Pomodoro Method</string>
+    <string name="metodo2">Mnemonic Method</string>
+    <string name="metodo3">Subject Interleaving</string>
+    <string name="metodo1_explicacao">The Pomodoro concept is to divide study time into 25-minute blocks, followed by 5-minute breaks to rest and improve concentration.</string>
+    <string name="metodo2_explicacao">Mnemonic study is a technique that uses associations and visual aids to help memorize complex content.</string>
+    <string name="metodo3_explicacao">This technique consists of alternating different subjects during study sessions to increase retention and avoid mental fatigue.</string>
+    <string name="abrir_site">Open Website</string>
+    <string name="fechar">Close</string>
+
+    <string name="homescreen_titulo">Wellness App</string>
+    <string name="bem_vindo">Hello! Welcome! 😎</string>
+    <string name="escolha_opcoes">Choose one of the options below to continue:</string>
+    <string name="tela_piadas_btn">Jokes Screen</string>
+
+    <string name="tecnicas_respiracao_titulo">Breathing Techniques</string>
+    <string name="tecnica1">4-7-8 Technique</string>
+    <string name="tecnica2">Alternate Nostril Breathing</string>
+    <string name="tecnica3">Progressive Relaxation</string>
+    <string name="tecnica1_explicacao">Inhale for 4 seconds, hold your breath for 7 seconds, and exhale for 8 seconds. Great for relaxation and anxiety control.</string>
+    <string name="tecnica2_explicacao">Also known as Nadi Shodhana, this technique balances the two hemispheres of the brain and helps calm the mind.</string>
+    <string name="tecnica3_explicacao">It involves tensing and relaxing each muscle group in the body to relieve physical and mental tension.</string>
+
+    <string name="piadas_titulo">Jokes</string>
+    <string name="historico">History</string>
+    <string name="piadas_texto2">Here’s a joke to brighten your day!</string>
+    <string name="conte_outra">Tell another!</string>
+    <string name="tentar_novamente">Try Again</string>
+    <string name="tecnicas_sentir_melhor">Techniques to feel better</string>
+    <string name="agora_nao">Not now</string>
+
+    <string name="piadas_historico_titulo">Joke History</string>
+    <string name="nenhuma_piada">No jokes in history yet.</string>
+    <string name="exibida_data">Displayed on:</string>
+
+    <string-array name="lista_emocoes">
+        <item>Happy</item>
+        <item>Sad</item>
+        <item>Angry</item>
+        <item>Bored</item>
+    </string-array>
+</resources>

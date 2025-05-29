@@ -1,3 +1,52 @@
 <resources>
     <string name="app_name">TrabalhoMobile</string>
+
+    <string name="analisando_emocao_titulo">Analisando Emoção</string>
+    <string name="detectando_expressao">Detectando sua expressão facial...</string>
+    <string name="permissao_camera">Permissão da câmera necessária. Por favor, conceda a permissão.</string>
+    <string name="solicitar_permissao">Solicitar Permissão</string>
+    <string name="analisando">Analisando...</string>
+
+    <string name="dicas_estudo_titulo">Dicas de Estudo</string>
+    <string name="metodo1">Método Pomodoro</string>
+    <string name="metodo2">Método Mnemônico</string>
+    <string name="metodo3">Intercalação de Matérias</string>
+    <string name="metodo1_explicacao">O conceito do Pomodoro é dividir o tempo de estudo em blocos de 25 minutos, seguidos por pausas de 5 minutos para descansar e melhorar a concentração.</string>
+    <string name="metodo2_explicacao">Estudo mnemônico é uma técnica que usa associações e recursos visuais para ajudar na memorização de conteúdos complexos.</string>
+    <string name="metodo3_explicacao">Essa técnica consiste em intercalar diferentes matérias durante o estudo para aumentar a retenção e evitar o cansaço mental.</string>
+    <string name="abrir_site">Abrir Site</string>
+    <string name="fechar">Fechar</string>
+
+    <string name="homescreen_titulo">App de Bem-Estar</string>
+    <string name="bem_vindo">Olá! Seja bem vindo! 😎</string>
+    <string name="escolha_opcoes">Escolha uma das opções abaixo para continuar:</string>
+    <string name="tela_piadas_btn">Tela de Piadas</string>
+
+    <string name="tecnicas_respiracao_titulo">Técnicas de Respiração</string>
+    <string name="tecnica1">Técnica 4-7-8</string>
+    <string name="tecnica2">Respiração das Narinas Alternadas</string>
+    <string name="tecnica3">Relaxamento Progressivo</string>
+    <string name="tecnica1_explicacao">Inspire por 4 segundos, segure o ar por 7 segundos e expire por 8 segundos. Excelente para relaxamento e controle da ansiedade.</string>
+    <string name="tecnica2_explicacao">Também conhecida como Nadi Shodhana, essa técnica equilibra os dois hemisférios do cérebro e ajuda a acalmar a mente.</string>
+    <string name="tecnica3_explicacao">Consiste em contrair e relaxar cada grupo muscular do corpo para promover alívio da tensão física e mental.</string>
+
+    <string name="piadas_titulo">Piadas</string>
+    <string name="historico">Histórico</string>
+    <string name="piadas_texto2">Aqui vai uma piada para alegrar seu dia!</string>
+    <string name="conte_outra">Conte outra!</string>
+    <string name="tentar_novamente">Tentar novamente</string>
+    <string name="tecnicas_sentir_melhor">Técnicas para se sentir melhor</string>
+    <string name="agora_nao">Agora não</string>
+
+    <string name="piadas_historico_titulo">Histórico de Piadas</string>
+    <string name="nenhuma_piada">Nenhuma piada no histórico ainda.</string>
+    <string name="exibida_data">Exibida em:</string>
+
+
+    <string-array name="lista_emocoes">
+        <item>Feliz</item>
+        <item>Triste</item>
+        <item>Bravo</item>
+        <item>Entediado</item>
+    </string-array>
 </resources>

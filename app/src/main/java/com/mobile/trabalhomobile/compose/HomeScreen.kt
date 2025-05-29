@@ -3,10 +3,12 @@ package com.mobile.trabalhomobile.compose
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.*
+import com.mobile.trabalhomobile.R
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -19,7 +21,7 @@ fun HomeScreen(navController: NavController) {
         containerColor = Color(0xFF121212), // fundo escuro
         topBar = {
             TopAppBar(
-                title = { Text("App de Bem-Estar") },
+                title = { Text(stringResource(id = R.string.homescreen_titulo)) },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color(0xFF1E1E1E)
                 )
@@ -35,7 +37,7 @@ fun HomeScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Olá! Seja bem vindo! \uD83D\uDE0E",
+                text = stringResource(id = R.string.bem_vindo),
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -44,7 +46,7 @@ fun HomeScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(12.dp))
 
             Text(
-                text = "Escolha uma das opções abaixo para continuar:",
+                text = stringResource(id = R.string.escolha_opcoes),
                 style = MaterialTheme.typography.bodyLarge,
                 color = Color.LightGray
             )
@@ -61,7 +63,10 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(56.dp)
             ) {
-                Text("Analisar Emoção", fontSize = 16.sp)
+                Text(
+                    stringResource(id = R.string.analisando_emocao_titulo),
+                    fontSize = 16.sp
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -76,7 +81,10 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(56.dp)
             ) {
-                Text("Dicas de Estudo", fontSize = 16.sp)
+                Text(
+                    stringResource(id = R.string.dicas_estudo_titulo),
+                    fontSize = 16.sp
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -91,7 +99,10 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(56.dp)
             ) {
-                Text("Técnicas de Respiração", fontSize = 16.sp)
+                Text(
+                    stringResource(id = R.string.tecnicas_respiracao_titulo),
+                    fontSize = 16.sp
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -106,7 +117,10 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(56.dp)
             ) {
-                Text("Tela de Piadas", fontSize = 16.sp)
+                Text(
+                    stringResource(id = R.string.tela_piadas_btn),
+                    fontSize = 16.sp
+                )
             }
         }
     }

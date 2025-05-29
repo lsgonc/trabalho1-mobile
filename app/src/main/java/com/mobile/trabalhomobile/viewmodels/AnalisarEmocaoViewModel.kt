@@ -6,8 +6,7 @@ class AnalisarEmocaoViewModel : ViewModel() {
     var emocao: String = ""
         private set
 
-    fun sortearEmocao() {
-        val lista = listOf("Feliz", "Triste", "Bravo", "Entediado")
+    fun sortearEmocao(lista: List<String>) {
         emocao = lista.random()
     }
 }

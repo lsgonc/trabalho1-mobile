@@ -5,11 +5,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
+import com.mobile.trabalhomobile.R
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
@@ -25,7 +27,7 @@ fun DicasEstudoScreen(onBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Dicas de Estudo") },
+                title = { Text(stringResource(id = R.string.dicas_estudo_titulo)) },
                 navigationIcon = {
                     IconButton(onClick = { onBack() }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Voltar")
@@ -50,16 +52,22 @@ fun DicasEstudoScreen(onBack: () -> Unit) {
                 onClick = { openDialog = "pomodoro" },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Método Pomodoro", fontSize = 16.sp)
+                Text(
+                    stringResource(id = R.string.metodo1),
+                    fontSize = 16.sp
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = { openDialog = "mnemonica" },
+                onClick = { openDialog = "mnemonico" },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Estudo Mnemônico", fontSize = 16.sp)
+                Text(
+                    stringResource(id = R.string.metodo2),
+                    fontSize = 16.sp
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -68,7 +76,10 @@ fun DicasEstudoScreen(onBack: () -> Unit) {
                 onClick = { openDialog = "intercalacao" },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Intercalação de Matérias", fontSize = 16.sp)
+                Text(
+                    stringResource(id = R.string.metodo3),
+                    fontSize = 16.sp
+                )
             }
         }
     }
@@ -77,18 +88,18 @@ fun DicasEstudoScreen(onBack: () -> Unit) {
     if (openDialog != null) {
         val (title, description, url) = when (openDialog) {
             "pomodoro" -> Triple(
-                "Método Pomodoro",
-                "O conceito do Pomodoro é dividir o tempo de estudo em blocos de 25 minutos, seguidos por pausas de 5 minutos para descansar e melhorar a concentração.",
+                stringResource(id = R.string.metodo1),
+                stringResource(id = R.string.metodo1_explicacao),
                 "https://brasilescola.uol.com.br/dicas-de-estudo/tecnica-pomodoro-que-e-e-como-funciona.htm"
             )
-            "mnemonica" -> Triple(
-                "Estudo Mnemônico",
-                "Estudo mnemônico é uma técnica que usa associações e recursos visuais para ajudar na memorização de conteúdos complexos.",
+            "mnemonico" -> Triple(
+                stringResource(id = R.string.metodo2),
+                stringResource(id = R.string.metodo2_explicacao),
                 "https://www.educamaisbrasil.com.br/educacao/noticias/o-que-e-estudo-mnemonico-conheca-a-tecnica"
             )
             "intercalacao" -> Triple(
-                "Intercalação de Matérias",
-                "Essa técnica consiste em intercalar diferentes matérias durante o estudo para aumentar a retenção e evitar o cansaço mental.",
+                stringResource(id = R.string.metodo3),
+                stringResource(id = R.string.metodo3_explicacao),
                 "https://www.educamaisbrasil.com.br/educacao/dicas/o-que-e-estudo-intercalado"
             )
             else -> Triple("", "", "")
@@ -104,12 +115,12 @@ fun DicasEstudoScreen(onBack: () -> Unit) {
                         context.startActivity(intent)
                     }
                 ) {
-                    Text("Abrir site")
+                    Text(stringResource(id = R.string.abrir_site))
                 }
             },
             dismissButton = {
                 TextButton(onClick = { openDialog = null }) {
-                    Text("Fechar")
+                    Text(stringResource(id = R.string.fechar))
                 }
             },
             title = { Text(title) },

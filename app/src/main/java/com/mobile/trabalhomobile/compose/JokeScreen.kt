@@ -21,8 +21,10 @@ import com.mobile.trabalhomobile.viewmodels.JokeViewModel
 import com.mobile.trabalhomobile.viewmodels.JokeViewModelFactory
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import com.mobile.trabalhomobile.viewmodels.AnalisarEmocaoViewModel
+import com.mobile.trabalhomobile.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,12 +39,13 @@ fun JokeScreen(
     onTechniquesClick: () -> Unit = {}
 ) {
     var showAnswer by remember { mutableStateOf(false) }
-    emocaoViewModel.sortearEmocao()
+    val context = LocalContext.current
+    emocaoViewModel.sortearEmocao(context.resources.getStringArray(R.array.lista_emocoes).toList())
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Piadas") },
+                title = { Text(stringResource(id = R.string.piadas_titulo)) },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
@@ -57,7 +60,10 @@ fun JokeScreen(
                 actions = {
                     TextButton(onClick = onNavigateToHistory) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text("Histórico", color = Color.White)
+                            Text(
+                                stringResource(id = R.string.historico),
+                                color = Color.White
+                            )
                             Spacer(modifier = Modifier.width(4.dp)) // Espaço entre o texto e o ícone
                             Icon(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowForward,
@@ -98,7 +104,7 @@ fun JokeScreen(
                             modifier = Modifier.padding(bottom = 16.dp)
                         )
                         Text(
-                            text = "Aqui vai uma piada para alegrar seu dia!",
+                            text = stringResource(id = R.string.piadas_texto2),
                             style = MaterialTheme.typography.titleMedium,
                             textAlign = TextAlign.Center,
                             modifier = Modifier.padding(bottom = 16.dp)
@@ -132,7 +138,7 @@ fun JokeScreen(
                                     containerColor = Color(0xFF4579FE)
                                 )
                             ) {
-                                Text("Conte outra!")
+                                Text(stringResource(id = R.string.conte_outra))
                             }
                         }
                     }
@@ -154,7 +160,7 @@ fun JokeScreen(
                                 containerColor = Color(0xFF4579FE)
                             )
                         ) {
-                            Text("Tentar novamente")
+                            Text(stringResource(id = R.string.tentar_novamente))
                         }
                     }
                 }
@@ -221,7 +227,7 @@ private fun ActionButtons(
                 containerColor = Color(0xFF31B768)
             )
         ) {
-            Text("Técnicas para se sentir melhor")
+            Text(stringResource(id = R.string.tecnicas_sentir_melhor))
         }
 
         Button(
@@ -234,7 +240,7 @@ private fun ActionButtons(
                 containerColor = Color(0xFFD02F27)
             )
         ) {
-            Text("Agora não")
+            Text(stringResource(id = R.string.agora_nao))
         }
     }
 }

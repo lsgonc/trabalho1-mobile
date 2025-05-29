@@ -13,11 +13,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
+import com.mobile.trabalhomobile.R
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
@@ -62,7 +64,7 @@ fun AnalisarEmocaoScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Analisando Emoção") },
+                title = { Text(stringResource(id = R.string.analisando_emocao_titulo)) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
@@ -89,7 +91,7 @@ fun AnalisarEmocaoScreen(
             if (hasCameraPermission) {
                 // Título
                 Text(
-                    text = "Detectando sua expressão facial...",
+                    text = stringResource(id = R.string.detectando_expressao),
                     style = MaterialTheme.typography.headlineSmall,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
@@ -128,13 +130,13 @@ fun AnalisarEmocaoScreen(
                 // Indicador de progresso
                 CircularProgressIndicator(modifier = Modifier.padding(top = 85.dp))
                 Text(
-                    text = "Analisando...",
+                    text = stringResource(id = R.string.analisando),
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = 8.dp)
                 )
             } else {
                 Text(
-                    text = "Permissão da câmera necessária. Por favor, conceda a permissão.",
+                    text = stringResource(id = R.string.permissao_camera),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.error,
                     modifier = Modifier.padding(16.dp)
@@ -143,7 +145,7 @@ fun AnalisarEmocaoScreen(
                     onClick = { requestPermissionLauncher.launch(Manifest.permission.CAMERA) },
                     modifier = Modifier.padding(top = 8.dp)
                 ) {
-                    Text("Solicitar Permissão")
+                    Text(stringResource(id = R.string.solicitar_permissao))
                 }
             }
         }

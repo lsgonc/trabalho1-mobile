@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -36,6 +37,7 @@ import com.mobile.trabalhomobile.viewmodels.JokeViewModelFactory
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import com.mobile.trabalhomobile.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,7 +54,7 @@ fun JokeHistoryScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Histórico de Piadas") },
+                title = { Text(stringResource(id = R.string.piadas_historico_titulo)) },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
@@ -76,7 +78,7 @@ fun JokeHistoryScreen(
                     .padding(innerPadding),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Nenhuma piada no histórico ainda.")
+                Text(stringResource(id = R.string.nenhuma_piada))
             }
         } else {
             LazyColumn(
@@ -111,7 +113,7 @@ fun JokeHistoryScreen(
                             val dateText = formatter.format(Date(joke.displayedAt))
 
                             Text(
-                                text = "Exibida em: $dateText",
+                                text = (stringResource(id = R.string.exibida_data) + " " + dateText),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Color.Gray
                             )
