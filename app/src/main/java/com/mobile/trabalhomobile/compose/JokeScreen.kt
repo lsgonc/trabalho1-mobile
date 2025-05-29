@@ -18,7 +18,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.mobile.trabalhomobile.viewmodels.JokeState
 import com.mobile.trabalhomobile.viewmodels.JokeViewModel
-import com.mobile.trabalhomobile.viewmodels.JokeViewModelFactory
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -30,9 +29,7 @@ import com.mobile.trabalhomobile.R
 @Composable
 fun JokeScreen(
     onNavigateToHistory: () -> Unit,
-    viewModel: JokeViewModel = viewModel(
-        factory = JokeViewModelFactory(LocalContext.current.applicationContext as Application)
-    ),
+    viewModel: JokeViewModel = viewModel(),
     emocaoViewModel: AnalisarEmocaoViewModel = viewModel(),
     onBackClick: () -> Unit = {},
     onShareClick: () -> Unit = {},

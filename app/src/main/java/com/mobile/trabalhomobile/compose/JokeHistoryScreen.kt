@@ -1,6 +1,5 @@
 package com.mobile.trabalhomobile.compose
 
-import android.app.Application
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,13 +26,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.mobile.trabalhomobile.viewmodels.JokeViewModel
-import com.mobile.trabalhomobile.viewmodels.JokeViewModelFactory
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -42,9 +39,7 @@ import com.mobile.trabalhomobile.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun JokeHistoryScreen(
-    viewModel: JokeViewModel = viewModel(
-        factory = JokeViewModelFactory(LocalContext.current.applicationContext as Application)
-    ),
+    viewModel: JokeViewModel = viewModel(),
     onBackClick: () -> Unit = {}
 ) {
     LaunchedEffect(Unit) {

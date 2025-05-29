@@ -64,18 +64,6 @@ class JokeViewModel(application: Application) : AndroidViewModel(application) {
             jokeHistory.value = repository.getJokeHistory()
         }
     }
-
-    companion object {
-        val Factory = object : ViewModelProvider.Factory {
-            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                if (modelClass.isAssignableFrom(JokeViewModel::class.java)) {
-                    @Suppress("UNCHECKED_CAST")
-                    return JokeViewModel(application = Application()) as T
-                }
-                throw IllegalArgumentException("Unknown ViewModel class")
-            }
-        }
-    }
 }
 
 sealed class JokeState {
